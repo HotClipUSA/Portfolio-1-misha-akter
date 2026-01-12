@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Reed | Strategic Digital Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --primary-light: #ffffff;
+            --accent: #b89f6d;
+            --accent-dark: #8c7a52;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-800: #262626;
+            --spacing-unit: 8px;
+            --max-width: 1200px;
+            --border-radius: 4px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+        }
+
+        p {
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            color: var(--gray-800);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 3);
+        }
+
+        section {
+            padding: calc(var(--spacing-unit) * 10) 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+            background-color: var(--primary-dark);
+            color: var(--primary-light);
+            border: 1px solid var(--primary-dark);
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-dark);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .btn-accent:hover {
+            background-color: transparent;
+            color: var(--accent-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-dark);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-dark);
+            color: var(--primary-light);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: calc(var(--spacing-unit) * 2) 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 4);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: calc(var(--spacing-unit) * 18);
+            padding-bottom: calc(var(--spacing-unit) * 12);
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-800);
+            margin-bottom: calc(var(--spacing-unit) * 5);
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 5);
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        .service-card {
+            padding: calc(var(--spacing-unit) * 4);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            color: var(--accent);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: calc(var(--spacing-unit) * 6);
+        }
+
+        .project-card {
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--gray-200);
+        }
+
+        .project-img {
+            height: 240px;
+            background-color: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-800);
+            font-size: 0.9rem;
+        }
+
+        .project-content {
+            padding: calc(var(--spacing-unit) * 4);
+        }
+
+        .project-result {
+            display: inline-block;
+            padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+            background-color: var(--gray-100);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: calc(var(--spacing-unit) * 8);
+            align-items: center;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 2);
+            margin-top: calc(var(--spacing-unit) * 3);
+        }
+
+        .skill-tag {
+            padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+            background-color: var(--gray-100);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 3);
+            margin-top: calc(var(--spacing-unit) * 4);
+        }
+
+        .social-links a {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: calc(var(--spacing-unit) * 5);
+        }
+
+        .testimonial-card {
+            padding: calc(var(--spacing-unit) * 4);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.2;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--gray-800);
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        /* Tech Stack */
+        .tech-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: calc(var(--spacing-unit) * 6);
+            margin-top: calc(var(--spacing-unit) * 4);
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 1);
+            color: var(--gray-800);
+            font-size: 0.9rem;
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        .pricing-card {
+            padding: calc(var(--spacing-unit) * 5);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: calc(var(--spacing-unit) * 3) 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray-800);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .pricing-features li {
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .pricing-features li i {
+            color: var(--accent);
+        }
+
+        /* Contact */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: calc(var(--spacing-unit) * 8);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--spacing-unit) * 4);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--spacing-unit) * 1);
+        }
+
+        .form-group label {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: calc(var(--spacing-unit) * 2);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--primary-light);
+            padding: calc(var(--spacing-unit) * 6) 0 calc(var(--spacing-unit) * 3);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+        }
+
+        .footer-logo {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .footer-social a {
+            color: var(--primary-light);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: calc(var(--spacing-unit) * 3);
+            border-top: 1px solid var(--gray-800);
+            color: var(--gray-200);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: calc(var(--spacing-unit) * 6);
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .services-grid,
+            .projects-grid,
+            .testimonials-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: calc(var(--spacing-unit) * 4);
+                text-align: center;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Alexander Reed</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#tech">Tech Stack</a>
+                <a href="#pricing">Engagement</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate">Strategic Digital Solutions for Corporate Growth</h1>
+                <p class="hero-subtitle animate delay-1">Transforming complex challenges into measurable results through data-informed strategy and precision execution.</p>
+                <div class="hero-btns animate delay-2">
+                    <a href="#projects" class="btn">View Case Studies</a>
+                    <a href="#contact" class="btn btn-outline">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <h2>Specialized Services</h2>
+            <div class="services-grid">
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Transformation Strategy</h3>
+                    <p>Comprehensive frameworks to modernize legacy systems, optimize workflows, and implement scalable digital infrastructure.</p>
+                </div>
+                <div class="service-card animate delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Performance Marketing Architecture</h3>
+                    <p>Data-driven campaign ecosystems designed to maximize ROI across paid channels, from initial strategy to attribution modeling.</p>
+                </div>
+                <div class="service-card animate delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Enterprise UX & Product Strategy</h3>
+                    <p>User-centered design systems and product roadmaps that align technical capability with business objectives and user needs.</p>
+                </div>
+                <div class="service-card animate delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Intelligence Systems</h3>
+                    <p>Implementation of analytics infrastructure, dashboard development, and insight extraction protocols to inform strategic decisions.</p>
+                </div>
+                <div class="service-card animate delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Technical Leadership & Advisory</h3>
+                    <p>Interim CTO services and strategic counsel for scaling organizations navigating technological expansion or restructuring.</p>
+                </div>
+                <div class="service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security & Compliance Integration</h3>
+                    <p>Risk assessment and implementation of security protocols within digital products and operational workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" style="background-color: var(--gray-100);">
+        <div class="container">
+            <h2>Selected Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card animate">
+                    <div class="project-img">
+                        [Global Fintech Platform]
+                    </div>
+                    <div class="project-content">
+                        <h3>Enterprise Payment System Overhaul</h3>
+                        <p>Led architecture redesign for a multi-currency payment processing platform serving 500K+ users. Streamlined transaction flow and integrated fraud detection algorithms.</p>
+                        <div class="project-result">+42% transaction success rate | -31% processing costs</div>
+                    </div>
+                </div>
+                <div class="project-card animate delay-1">
+                    <div class="project-img">
+                        [Fortune 500 Retailer]
+                    </div>
+                    <div class="project-content">
+                        <h3>Omnichannel Customer Experience Platform</h3>
+                        <p>Designed and implemented unified commerce platform integrating 12 legacy systems into a single customer view, enabling personalized engagement across touchpoints.</p>
+                        <div class="project-result">+28% customer retention | $18M incremental revenue</div>
+                    </div>
+                </div>
+                <div class="project-card animate delay-2">
+                    <div class="project-img">
+                        [Healthcare Technology Scale-up]
+                    </div>
+                    <div class="project-content">
+                        <h3>HIPAA-Compliant Telemedicine Infrastructure</h3>
+                        <p>Built secure patient-provider communication platform with EHR integration, serving 200+ clinics. Managed full compliance lifecycle and scalability planning.</p>
+                        <div class="project-result">Successfully scaled to 1.2M users | 99.97% uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="animate">
+                    <h2>Professional Profile</h2>
+                    <p>Alexander Reed partners with enterprise organizations and scaling ventures to architect digital solutions that drive measurable business outcomes.</p>
+                    <p>With a background in systems engineering and strategic consulting, I bridge technical execution with corporate vision. Focused on sustainable growth through technological excellence.</p>
+                    
+                    <h3 style="margin-top: calc(var(--spacing-unit) * 4);">Core Competencies</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Technical Architecture</span>
+                        <span class="skill-tag">Data-Driven Decision Making</span>
+                        <span class="skill-tag">Stakeholder Leadership</span>
+                        <span class="skill-tag">Complex Project Delivery</span>
+                        <span class="skill-tag">Cross-Functional Alignment</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="animate delay-1">
+                    <h3>Career Highlights</h3>
+                    <ul style="list-style-position: inside; color: var(--gray-800);">
+                        <li style="margin-bottom: calc(var(--spacing-unit) * 2);">15 years leading digital transformation initiatives</li>
+                        <li style="margin-bottom: calc(var(--spacing-unit) * 2);">Former Head of Technology at global consulting firm</li>
+                        <li style="margin-bottom: calc(var(--spacing-unit) * 2);">Advised 50+ organizations on technical strategy</li>
+                        <li style="margin-bottom: calc(var(--spacing-unit) * 2);">Specialized in highly regulated industries</li>
+                        <li style="margin-bottom: calc(var(--spacing-unit) * 2);">Regular contributor to industry publications</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: calc(var(--spacing-unit) * 4);">Engagement Philosophy</h3>
+                    <p>I engage selectively with projects requiring strategic technical leadership. Each partnership is built on clear communication, defined objectives, and mutual commitment to excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" style="background-color: var(--gray-100);">
+        <div class="container">
+            <h2>Client Perspectives</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate">
+                    <p>"Alexander's strategic approach to our platform migration was instrumental in achieving a seamless transition with zero business disruption. His ability to translate technical requirements into business value is exceptional."</p>
+                    <div class="testimonial-role">
+                        <strong>Sarah Chen</strong><br>
+                        Chief Digital Officer<br>
+                        Global Financial Services
+                    </div>
+                </div>
+                <div class="testimonial-card animate delay-1">
+                    <p>"We engaged Alexander to architect our data infrastructure. The solution not only improved reporting efficiency by 70% but also created new revenue opportunities through data monetization."</p>
+                    <div class="testimonial-role">
+                        <strong>Marcus Rodriguez</strong><br>
+                        CEO<br>
+                        Technology Scale-up
+                    </div>
+                </div>
+                <div class="testimonial-card animate delay-2">
+                    <p>"His advisory during our digital transformation was pivotal. Alexander provided clarity on technical investments that directly correlated with our growth metrics. A true strategic partner."</p>
+                    <div class="testimonial-role">
+                        <strong>Jennifer Park</strong><br>
+                        SVP of Operations<br>
+                        Fortune 500 Retail
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech">
+        <div class="container">
+            <h2>Technical Ecosystem</h2>
+            <div class="tech-logos">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <span>JavaScript/TypeScript</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <span>SQL/NoSQL</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <span>AWS Architecture</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <span>Data Visualization</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <span>Microservices</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <span>Security Protocols</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <span>Cloud Infrastructure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" style="background-color: var(--gray-100);">
+        <div class="container">
+            <h2>Engagement Models</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card animate">
+                    <h3>Strategic Advisory</h3>
+                    <p>For organizations seeking technical guidance and architectural review.</p>
+                    <div class="price">$12,500<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Monthly strategy sessions</li>
+                        <li><i class="fas fa-check"></i> Technical architecture review</li>
+                        <li><i class="fas fa-check"></i> Vendor evaluation</li>
+                        <li><i class="fas fa-check"></i> Roadmap planning</li>
+                        <li><i class="fas fa-check"></i> 10hrs monthly support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center;">Inquire</a>
+                </div>
+                <div class="pricing-card featured animate delay-1">
+                    <div class="pricing-badge">Most Common</div>
+                    <h3>Project Leadership</h3>
+                    <p>End-to-end management of critical digital initiatives with defined deliverables.</p>
+                    <div class="price">$28,000<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Full project ownership</li>
+                        <li><i class="fas fa-check"></i> Cross-functional team leadership</li>
+                        <li><i class="fas fa-check"></i> Weekly executive reporting</li>
+                        <li><i class="fas fa-check"></i> Risk management</li>
+                        <li><i class="fas fa-check"></i> Delivery guarantee</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-accent" style="width: 100%; text-align: center;">Discuss Project</a>
+                </div>
+                <div class="pricing-card animate delay-2">
+                    <h3>Enterprise Transformation</h3>
+                    <p>Comprehensive digital transformation partnership for large-scale change.</p>
+                    <div class="price">Custom<span>/engagement</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Multi-quarter engagement</li>
+                        <li><i class="fas fa-check"></i> Executive committee participation</li>
+                        <li><i class="fas fa-check"></i> Full team integration</li>
+                        <li><i class="fas fa-check"></i> Change management</li>
+                        <li><i class="fas fa-check"></i> Performance benchmarking</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%; text-align: center;">Contact for Proposal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2>Initiate Consultation</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info animate">
+                    <h3>Connect Directly</h3>
+                    <p>For priority inquiries, please use the direct contact methods below. Typical response time is within 24 hours.</p>
+                    
+                    <div class="contact-item">
+                        <i class="far fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            contact@alexanderreed.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Based in</strong><br>
+                            New York | Remote engagements worldwide
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <strong>Availability</strong><br>
+                            Currently considering Q3 engagements
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate delay-1">
+                    <h3>Formal Inquiry</h3>
+                    <form id="inquiryForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Organization</label>
+                            <input type="text" id="company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">Interest Area</label>
+                            <select id="interest" style="padding: calc(var(--spacing-unit) * 2); border: 1px solid var(--gray-200); border-radius: var(--border-radius);">
+                                <option>Strategic Advisory</option>
+                                <option>Project Leadership</option>
+                                <option>Enterprise Transformation</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Overview</label>
+                            <textarea id="message" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Alexander Reed</div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="far fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Alexander Reed. All rights reserved. Professional consultancy services.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animation classes
+        document.querySelectorAll('.animate, .delay-1, .delay-2, .delay-3').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Form submission
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry. I will respond within 24 hours.');
+            this.reset();
+        });
+
+        // Update year in footer
+        document.querySelector('.copyright').innerHTML = document.querySelector('.copyright').innerHTML.replace('2025', new Date().getFullYear());
+    </script>
+</body>
+</html>
