@@ -21,7 +21,6 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px 16px 40px;
-            overflow-x: hidden;
         }
         
         /* Header Section */
@@ -31,27 +30,24 @@
             background: linear-gradient(135deg, #f9f0ff 0%, #fff0f9 100%);
             border-radius: 24px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
         
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             margin: 0 auto 20px;
-            background: linear-gradient(135deg, #ffb6c1 0%, #dda0dd 100%);
             border-radius: 50%;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
-            color: white;
-            box-shadow: 0 4px 12px rgba(221, 160, 221, 0.3);
+            border: 3px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
         .logo-img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
             object-fit: cover;
         }
         
@@ -60,7 +56,6 @@
             font-weight: 600;
             color: #5a4b81;
             margin-bottom: 5px;
-            letter-spacing: -0.3px;
         }
         
         .age {
@@ -93,11 +88,9 @@
             font-size: 14px;
             color: #7a6b9e;
             cursor: pointer;
-            transition: all 0.3s ease;
             border: 1px solid #e8e0ff;
             font-weight: 500;
-            text-decoration: none;
-            display: inline-block;
+            transition: all 0.3s ease;
         }
         
         .tag:hover {
@@ -108,49 +101,49 @@
         /* Social Bar Ad Container */
         .social-bar-ad {
             margin: 0 auto 30px;
-            min-height: 50px;
+            min-height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #f9f9f9;
             border-radius: 12px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            max-width: 90%;
+            padding: 10px;
+            border: 1px solid #eee;
         }
         
-        /* Gallery Section */
-        .gallery {
+        /* Gallery Layout */
+        .content-section {
             margin: 30px 0;
         }
         
-        .gallery-item {
-            margin-bottom: 30px;
+        /* Image Blocks */
+        .image-block {
+            margin-bottom: 25px;
             background: white;
             border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
         }
         
-        .gallery-item:hover {
-            transform: translateY(-4px);
+        .image-block:hover {
+            transform: translateY(-5px);
         }
         
         .gallery-image {
             width: 100%;
-            height: 300px;
+            height: 320px;
             object-fit: cover;
             cursor: pointer;
-            transition: opacity 0.3s ease;
             display: block;
+            transition: transform 0.5s ease;
         }
         
         .gallery-image:hover {
-            opacity: 0.95;
+            transform: scale(1.02);
         }
         
-        .gallery-content {
+        .image-content {
             padding: 20px;
         }
         
@@ -165,60 +158,45 @@
             font-size: 17px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
             margin-bottom: 12px;
             text-align: center;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
         
         .cta-button:hover {
             background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+            box-shadow: 0 6px 15px rgba(124, 58, 237, 0.25);
         }
         
         .subtext {
             text-align: center;
             font-size: 14px;
             color: #888;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             padding: 0 10px;
         }
         
-        /* Native Banner Ad Containers */
-        .native-ad {
-            margin: 0 auto;
-            min-height: 100px;
+        /* Banner Ad Blocks - Fixed Size */
+        .banner-ad {
+            margin-bottom: 25px;
+            height: 280px;
             background-color: #f8f9fa;
             border-radius: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 1px solid #eee;
-            padding: 15px;
+            padding: 10px;
+            overflow: hidden;
         }
         
-        /* Banner Blocks (Alternating) */
-        .banner-block {
-            margin-bottom: 30px;
-            min-height: 250px;
-            background-color: #f9f9f9;
-            border-radius: 18px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #eee;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        }
-        
-        .banner-container {
+        .banner-ad iframe {
             width: 100%;
             height: 100%;
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border: none;
+            border-radius: 8px;
         }
         
         /* Smartlink Section */
@@ -247,8 +225,8 @@
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
         
         .smartlink-button:hover {
@@ -267,7 +245,7 @@
         
         .footer-ad {
             margin: 0 auto 25px;
-            min-height: 250px;
+            height: 250px;
             width: 300px;
             background-color: #f9f9f9;
             border-radius: 12px;
@@ -275,7 +253,15 @@
             justify-content: center;
             align-items: center;
             border: 1px solid #ddd;
-            padding: 15px;
+            padding: 10px;
+            overflow: hidden;
+        }
+        
+        .footer-ad iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
         }
         
         .footer-links {
@@ -291,10 +277,6 @@
             font-size: 15px;
         }
         
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-        
         .footer-text {
             font-size: 14px;
             color: #888;
@@ -307,82 +289,41 @@
                 padding: 15px 12px 30px;
             }
             
-            .header {
-                padding: 25px 15px 20px;
-                border-radius: 20px;
-            }
-            
             .logo {
-                width: 70px;
-                height: 70px;
-                font-size: 32px;
-            }
-            
-            .name {
-                font-size: 24px;
-            }
-            
-            .tagline {
-                font-size: 16px;
-            }
-            
-            .categories {
-                gap: 8px;
-            }
-            
-            .tag {
-                padding: 7px 16px;
-                font-size: 13px;
+                width: 90px;
+                height: 90px;
             }
             
             .gallery-image {
                 height: 250px;
             }
             
-            .banner-block {
-                min-height: 200px;
-                padding: 15px;
+            .banner-ad {
+                height: 200px;
             }
             
             .footer-ad {
                 width: 100%;
                 max-width: 300px;
+                height: 250px;
             }
         }
-        
-        /* Loading Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .gallery-item {
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        .banner-block {
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        /* Loading States */
-        .loading {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
     </style>
+    
+    <!-- Social Bar Ads Script -->
+    <script src="https://pl28464211.effectivegatecpm.com/25/eb/9e/25eb9eaa691c11274418e081e73445d7.js"></script>
+    
+    <!-- Popunder Ads Script -->
+    <script src="https://pl28464205.effectivegatecpm.com/8c/68/c4/8c68c4ce8b41212d90be7c61af178f17.js"></script>
+    
+    <!-- Native Banner Script -->
+    <script async="async" data-cfasync="false" src="https://pl28464210.effectivegatecpm.com/d075772f459abe3660e1bc21aa280790/invoke.js"></script>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header">
         <div class="logo">
-            <!-- Placeholder for logo.jpg -->
-            MA
+            <img src="logo.jpg" alt="Misha Akter" class="logo-img">
         </div>
         <h1 class="name">Misha Akter</h1>
         <div class="age">18Y — Student</div>
@@ -391,190 +332,169 @@
 
     <!-- Category Tags Section -->
     <section class="categories">
-        <a href="#" class="tag" data-category="lifestyle">Lifestyle</a>
-        <a href="#" class="tag" data-category="beauty">Beauty</a>
-        <a href="#" class="tag" data-category="trends">Trends</a>
-        <a href="#" class="tag" data-category="digital">Digital Picks</a>
-        <a href="#" class="tag" data-category="creative">Creative Finds</a>
-        <a href="#" class="tag" data-category="social">Social Discoveries</a>
+        <div class="tag">Lifestyle</div>
+        <div class="tag">Beauty</div>
+        <div class="tag">Trends</div>
+        <div class="tag">Digital Picks</div>
+        <div class="tag">Creative Finds</div>
+        <div class="tag">Social Discoveries</div>
     </section>
 
-    <!-- Social Bar Ad (Position 1) -->
-    <div class="social-bar-ad" id="socialBarAd">
-        <!-- EffectiveGate SocialBar Ad -->
-        <div id="sba_container"></div>
+    <!-- Social Bar Ad Section -->
+    <div class="social-bar-ad">
+        <!-- Social Bar Ads will show here -->
     </div>
 
-    <!-- Gallery Section - 20 Blocks Alternating Pattern -->
-    <section class="gallery">
-        <!-- Image Block #1 -->
-        <div class="gallery-item">
-            <img src="1.jpg" alt="Lifestyle discovery" class="gallery-image" data-image="1">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+    <!-- 20-Block Alternating Layout -->
+    <section class="content-section">
+        <!-- Block 1: Image #1 -->
+        <div class="image-block">
+            <img src="1.jpg" alt="Lifestyle discovery" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd1">
-                    <div id="native_container_1"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #1 -->
-        <div class="banner-block" id="bannerBlock1">
-            <div class="banner-container" id="banner_container_1"></div>
+        <!-- Block 2: Banner Ad #1 -->
+        <div class="banner-ad" id="banner-ad-1">
+            <!-- Native Banner Ad 1 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #2 -->
-        <div class="gallery-item">
-            <img src="2.jpg" alt="Creative find" class="gallery-image" data-image="2">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 3: Image #2 -->
+        <div class="image-block">
+            <img src="2.jpg" alt="Creative find" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd2">
-                    <div id="native_container_2"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #2 -->
-        <div class="banner-block" id="bannerBlock2">
-            <div class="banner-container" id="banner_container_2"></div>
+        <!-- Block 4: Banner Ad #2 -->
+        <div class="banner-ad" id="banner-ad-2">
+            <!-- Native Banner Ad 2 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #3 -->
-        <div class="gallery-item">
-            <img src="3.jpg" alt="Digital pick" class="gallery-image" data-image="3">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 5: Image #3 -->
+        <div class="image-block">
+            <img src="3.jpg" alt="Digital pick" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd3">
-                    <div id="native_container_3"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #3 -->
-        <div class="banner-block" id="bannerBlock3">
-            <div class="banner-container" id="banner_container_3"></div>
+        <!-- Block 6: Banner Ad #3 -->
+        <div class="banner-ad" id="banner-ad-3">
+            <!-- Native Banner Ad 3 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #4 -->
-        <div class="gallery-item">
-            <img src="4.jpg" alt="Beauty trend" class="gallery-image" data-image="4">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 7: Image #4 -->
+        <div class="image-block">
+            <img src="4.jpg" alt="Beauty trend" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd4">
-                    <div id="native_container_4"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #4 -->
-        <div class="banner-block" id="bannerBlock4">
-            <div class="banner-container" id="banner_container_4"></div>
+        <!-- Block 8: Banner Ad #4 -->
+        <div class="banner-ad" id="banner-ad-4">
+            <!-- Native Banner Ad 4 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #5 -->
-        <div class="gallery-item">
-            <img src="5.jpg" alt="Social discovery" class="gallery-image" data-image="5">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 9: Image #5 -->
+        <div class="image-block">
+            <img src="5.jpg" alt="Social discovery" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd5">
-                    <div id="native_container_5"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #5 -->
-        <div class="banner-block" id="bannerBlock5">
-            <div class="banner-container" id="banner_container_5"></div>
+        <!-- Block 10: Banner Ad #5 -->
+        <div class="banner-ad" id="banner-ad-5">
+            <!-- Native Banner Ad 5 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #6 -->
-        <div class="gallery-item">
-            <img src="6.jpg" alt="Trend discovery" class="gallery-image" data-image="6">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 11: Image #6 -->
+        <div class="image-block">
+            <img src="6.jpg" alt="Trend discovery" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd6">
-                    <div id="native_container_6"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #6 -->
-        <div class="banner-block" id="bannerBlock6">
-            <div class="banner-container" id="banner_container_6"></div>
+        <!-- Block 12: Banner Ad #6 -->
+        <div class="banner-ad" id="banner-ad-6">
+            <!-- Native Banner Ad 6 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #7 -->
-        <div class="gallery-item">
-            <img src="7.jpg" alt="Lifestyle find" class="gallery-image" data-image="7">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 13: Image #7 -->
+        <div class="image-block">
+            <img src="7.jpg" alt="Lifestyle find" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd7">
-                    <div id="native_container_7"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #7 -->
-        <div class="banner-block" id="bannerBlock7">
-            <div class="banner-container" id="banner_container_7"></div>
+        <!-- Block 14: Banner Ad #7 -->
+        <div class="banner-ad" id="banner-ad-7">
+            <!-- Native Banner Ad 7 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #8 -->
-        <div class="gallery-item">
-            <img src="8.jpg" alt="Creative discovery" class="gallery-image" data-image="8">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 15: Image #8 -->
+        <div class="image-block">
+            <img src="8.jpg" alt="Creative discovery" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd8">
-                    <div id="native_container_8"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #8 -->
-        <div class="banner-block" id="bannerBlock8">
-            <div class="banner-container" id="banner_container_8"></div>
+        <!-- Block 16: Banner Ad #8 -->
+        <div class="banner-ad" id="banner-ad-8">
+            <!-- Native Banner Ad 8 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #9 -->
-        <div class="gallery-item">
-            <img src="9.jpg" alt="Digital discovery" class="gallery-image" data-image="9">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 17: Image #9 -->
+        <div class="image-block">
+            <img src="9.jpg" alt="Digital discovery" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd9">
-                    <div id="native_container_9"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #9 -->
-        <div class="banner-block" id="bannerBlock9">
-            <div class="banner-container" id="banner_container_9"></div>
+        <!-- Block 18: Banner Ad #9 -->
+        <div class="banner-ad" id="banner-ad-9">
+            <!-- Native Banner Ad 9 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
         
-        <!-- Image Block #10 -->
-        <div class="gallery-item">
-            <img src="10.jpg" alt="Trend pick" class="gallery-image" data-image="10">
-            <div class="gallery-content">
-                <a href="#" class="cta-button" data-link="button">View & Explore</a>
+        <!-- Block 19: Image #10 -->
+        <div class="image-block">
+            <img src="10.jpg" alt="Trend pick" class="gallery-image">
+            <div class="image-content">
+                <a href="#" class="cta-button">View & Explore</a>
                 <div class="subtext">Tap to explore</div>
-                <div class="native-ad" id="nativeAd10">
-                    <div id="native_container_10"></div>
-                </div>
             </div>
         </div>
         
-        <!-- Banner Block #10 -->
-        <div class="banner-block" id="bannerBlock10">
-            <div class="banner-container" id="banner_container_10"></div>
+        <!-- Block 20: Banner Ad #10 -->
+        <div class="banner-ad" id="banner-ad-10">
+            <!-- Native Banner Ad 10 -->
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
     </section>
 
@@ -584,17 +504,26 @@
         <a href="https://www.effectivegatecpm.com/tdaahvv8pq?key=05bfc2e630bf3613cee187bf0b0f13a8" 
            class="smartlink-button" 
            target="_blank" 
-           rel="noopener"
-           id="smartlinkBtn">
+           rel="noopener">
             Open Smartlink
         </a>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-ad" id="footerAd">
-            <!-- 300x250 Banner Ad -->
-            <div id="footer_banner_container"></div>
+        <!-- 300x250 Footer Banner -->
+        <div class="footer-ad">
+            <!-- Banner 300x250 ads -->
+            <script>
+                atOptions = {
+                    'key' : '6c78c1ac364fa6803c4c1cf560c9b716',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/6c78c1ac364fa6803c4c1cf560c9b716/invoke.js"></script>
         </div>
         
         <div class="footer-links">
@@ -607,27 +536,14 @@
         </div>
     </footer>
 
-    <!-- Popunder Script (Loaded after user interaction) -->
-    <div id="popunderScriptContainer" style="display:none;"></div>
-
     <script>
-        // Monetization URLs
+        // Direct links
         const affiliateLinks = [
             'https://www.effectivegatecpm.com/uaw2hhminv?key=e8c0f110815e618bc184ba43e3f68e79',
             'https://www.effectivegatecpm.com/utsu280n?key=1573b3d30150666f41a1b89fc41a58ca',
             'https://www.effectivegatecpm.com/n3kkukx1?key=248cbfd1dcc11df74784b0a40d2accad',
             'https://www.effectivegatecpm.com/n5krwq8nm?key=3f99cc2df80ba8a23396ba43198c45d8'
         ];
-
-        // Performance & Monetization Control
-        let popunderTriggered = false;
-        let userInteracted = false;
-        let adsLoaded = false;
-        
-        // Generate random IDs for ad containers
-        function generateRandomId(prefix) {
-            return prefix + '_' + Math.random().toString(36).substr(2, 9);
-        }
         
         // Get random affiliate link
         function getRandomLink() {
@@ -635,249 +551,44 @@
             return affiliateLinks[randomIndex];
         }
         
-        // Open link with popunder logic
-        function openMonetizationLink(event, triggerPopunder = true) {
-            event.preventDefault();
-            userInteracted = true;
-            
-            const link = getRandomLink();
-            window.open(link, '_blank', 'noopener,noreferrer');
-            
-            // Trigger popunder only once on first CTA action
-            if (triggerPopunder && !popunderTriggered) {
-                popunderTriggered = true;
-                
-                // Delayed popunder trigger (2.5 seconds)
-                setTimeout(() => {
-                    triggerPopunderScript();
-                }, 2500);
-            }
-            
-            return false;
-        }
-        
-        // Trigger popunder script
-        function triggerPopunderScript() {
-            const popContainer = document.getElementById('popunderScriptContainer');
-            if (!popContainer) return;
-            
-            // Load popunder script dynamically
-            const script = document.createElement('script');
-            script.src = '//effectivegatecpm.com/599e4c57cdfe852b8c8ddebfe6c4ff73/invoke.js';
-            script.async = true;
-            popContainer.appendChild(script);
-        }
-        
-        // Fast-Lazy Banner Loading (0.7-1.4s delay)
-        function loadBannerAds() {
-            if (adsLoaded) return;
-            adsLoaded = true;
-            
-            // Load Social Bar Ad
-            setTimeout(() => {
-                try {
-                    const sbaScript = document.createElement('script');
-                    sbaScript.src = '//effectivegatecpm.com/24e6e22ec89b301e2a3e9cf5a7b4f8f3/invoke.js';
-                    sbaScript.async = true;
-                    document.getElementById('sba_container').appendChild(sbaScript);
-                } catch(e) { console.log('Social bar ad loading'); }
-            }, 1200);
-            
-            // Load Footer Banner Ad
-            setTimeout(() => {
-                try {
-                    const bannerScript = document.createElement('script');
-                    bannerScript.innerHTML = `
-                        atOptions = {
-                            'key' : '9e9d66d80de8ff3c5d958cf5e2c1c4b4',
-                            'format' : 'iframe',
-                            'height' : 250,
-                            'width' : 300,
-                            'params' : {}
-                        };
-                    `;
-                    document.getElementById('footer_banner_container').appendChild(bannerScript);
-                    
-                    const bannerInvoke = document.createElement('script');
-                    bannerInvoke.src = '//www.highperformanceformat.com/9e9d66d80de8ff3c5d958cf5e2c1c4b4/invoke.js';
-                    bannerInvoke.async = true;
-                    document.getElementById('footer_banner_container').appendChild(bannerInvoke);
-                } catch(e) { console.log('Footer banner ad loading'); }
-            }, 1500);
-            
-            // Load Native Ads (lazy via intersection observer)
-            const nativeObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const containerId = entry.target.id.replace('nativeAd', 'native_container_');
-                        loadNativeAd(containerId.replace('nativeAd', ''));
-                        nativeObserver.unobserve(entry.target);
-                    }
-                });
-            }, { root: null, rootMargin: '100px', threshold: 0.1 });
-            
-            // Observe each native ad container
-            for (let i = 1; i <= 10; i++) {
-                const adContainer = document.getElementById('nativeAd' + i);
-                if (adContainer) {
-                    nativeObserver.observe(adContainer);
-                }
-            }
-            
-            // Load Banner Blocks with fast-lazy timing (0.7-1.4s)
-            const bannerObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const bannerId = entry.target.id.replace('bannerBlock', '');
-                        setTimeout(() => {
-                            loadBannerBlock(bannerId);
-                        }, 700 + (Math.random() * 700)); // Random delay 0.7-1.4s
-                        bannerObserver.unobserve(entry.target);
-                    }
-                });
-            }, { root: null, rootMargin: '150px', threshold: 0.1 });
-            
-            // Observe each banner block
-            for (let i = 1; i <= 10; i++) {
-                const bannerBlock = document.getElementById('bannerBlock' + i);
-                if (bannerBlock) {
-                    bannerObserver.observe(bannerBlock);
-                }
-            }
-        }
-        
-        // Load individual native ad
-        function loadNativeAd(index) {
-            try {
-                const container = document.getElementById('native_container_' + index);
-                if (!container) return;
-                
-                const script = document.createElement('script');
-                script.src = '//effectivegatecpm.com/1d89d1d1ce7d9d6f68e6d6c37c5e5e5f/invoke.js';
-                script.setAttribute('data-id', 'native_container_' + index);
-                script.async = true;
-                container.appendChild(script);
-            } catch(e) { console.log('Native ad ' + index + ' loading'); }
-        }
-        
-        // Load individual banner block (mixed mode: native + 300x250)
-        function loadBannerBlock(index) {
-            try {
-                const container = document.getElementById('banner_container_' + index);
-                if (!container) return;
-                
-                // Alternate between native and banner styles
-                if (index % 2 === 0) {
-                    // Native banner style for even indexes
-                    const script = document.createElement('script');
-                    script.src = '//effectivegatecpm.com/1d89d1d1ce7d9d6f68e6d6c37c5e5e5f/invoke.js';
-                    script.setAttribute('data-id', 'banner_container_' + index);
-                    script.async = true;
-                    container.appendChild(script);
-                } else {
-                    // 300x250 banner style for odd indexes
-                    const bannerScript = document.createElement('script');
-                    bannerScript.innerHTML = `
-                        atOptions = {
-                            'key' : '9e9d66d80de8ff3c5d958cf5e2c1c4b4',
-                            'format' : 'iframe',
-                            'height' : 250,
-                            'width' : 300,
-                            'params' : {}
-                        };
-                    `;
-                    container.appendChild(bannerScript);
-                    
-                    const bannerInvoke = document.createElement('script');
-                    bannerInvoke.src = '//www.highperformanceformat.com/9e9d66d80de8ff3c5d958cf5e2c1c4b4/invoke.js';
-                    bannerInvoke.async = true;
-                    container.appendChild(bannerInvoke);
-                }
-            } catch(e) { console.log('Banner block ' + index + ' loading'); }
-        }
-        
-        // Initialize event listeners when DOM is loaded
+        // Initialize click events
         document.addEventListener('DOMContentLoaded', function() {
             // Category tags click events
             const tags = document.querySelectorAll('.tag');
             tags.forEach(tag => {
                 tag.addEventListener('click', function(event) {
-                    openMonetizationLink(event, false); // Tags don't trigger popunder
+                    event.preventDefault();
+                    const link = getRandomLink();
+                    window.open(link, '_blank');
                 });
-                // Set random link for each tag
-                tag.href = getRandomLink();
             });
             
             // Gallery images click events
             const galleryImages = document.querySelectorAll('.gallery-image');
             galleryImages.forEach(image => {
                 image.addEventListener('click', function(event) {
-                    openMonetizationLink(event, true); // Images trigger popunder
+                    event.preventDefault();
+                    const link = getRandomLink();
+                    window.open(link, '_blank');
                 });
-                // Add loading state
-                image.onerror = function() {
-                    this.style.backgroundColor = '#f0f0f0';
-                    this.style.display = 'flex';
-                    this.style.alignItems = 'center';
-                    this.style.justifyContent = 'center';
-                    this.innerHTML = '<span style="color:#888;">Image ' + this.dataset.image + '</span>';
-                };
             });
             
             // CTA buttons click events
             const ctaButtons = document.querySelectorAll('.cta-button');
             ctaButtons.forEach(button => {
                 button.addEventListener('click', function(event) {
-                    openMonetizationLink(event, true); // Buttons trigger popunder
+                    event.preventDefault();
+                    const link = getRandomLink();
+                    window.open(link, '_blank');
                 });
-                // Set random links for all CTA buttons
-                button.href = getRandomLink();
             });
             
-            // Mark user interaction for ad loading
-            const interactionEvents = ['click', 'scroll', 'touchstart', 'mousemove'];
-            interactionEvents.forEach(eventType => {
-                document.addEventListener(eventType, function() {
-                    if (!userInteracted) {
-                        userInteracted = true;
-                        setTimeout(loadBannerAds, 500);
-                    }
-                }, { once: true, passive: true });
-            });
-            
-            // Auto-load ads after 3 seconds if user hasn't interacted
-            setTimeout(function() {
-                if (!userInteracted) {
-                    userInteracted = true;
-                    loadBannerAds();
-                }
-            }, 3000);
-            
-            // Add loading animation for images
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    img.style.opacity = '1';
-                }, 300);
+            // Set random links for all CTA buttons
+            ctaButtons.forEach(button => {
+                const link = getRandomLink();
+                button.href = link;
             });
         });
-        
-        // Mobile responsive adjustments
-        function adjustForMobile() {
-            if (window.innerWidth <= 600) {
-                document.body.style.padding = '15px 12px 30px';
-            } else {
-                document.body.style.padding = '20px 16px 40px';
-            }
-        }
-        
-        // Initial adjustment
-        adjustForMobile();
-        
-        // Adjust on resize
-        window.addEventListener('resize', adjustForMobile);
     </script>
 </body>
 </html>
