@@ -3,105 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misha Akter - Lifestyle & Digital Discoveries</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+    <title>Misha Akter | Student & Creative Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
+        :root {
+            --primary-color: #f8a5c2;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --light-color: #fef6f9;
+            --dark-color: #2d3436;
+            --text-color: #555;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #fff;
+            color: var(--text-color);
             line-height: 1.6;
-            color: #333;
-            background-color: #fefefe;
-            max-width: 800px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 16px 40px;
+            padding: 0 20px;
         }
-        
-        /* Header Section */
-        .header {
-            text-align: center;
-            padding: 30px 20px 25px;
-            background: linear-gradient(135deg, #f9f0ff 0%, #fff0f9 100%);
-            border-radius: 24px;
-            margin-bottom: 25px;
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 15px 0;
         }
-        
-        .logo {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            overflow: hidden;
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            border: 3px solid #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .name {
-            font-size: 28px;
-            font-weight: 600;
-            color: #5a4b81;
-            margin-bottom: 5px;
-        }
-        
-        .age {
-            font-size: 16px;
-            color: #8a7ca7;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        
-        .tagline {
-            font-size: 18px;
-            color: #9c89c7;
-            font-weight: 400;
-        }
-        
-        /* Category Tags */
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px 10px;
-            margin-bottom: 20px;
-        }
-        
-        .tag {
-            padding: 8px 18px;
-            background-color: #f5f0ff;
-            border-radius: 50px;
-            font-size: 14px;
-            color: #7a6b9e;
+            gap: 15px;
+            text-decoration: none;
             cursor: pointer;
-            border: 1px solid #e8e0ff;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            padding: 3px;
+            background-color: white;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo-text span {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-color);
             font-weight: 500;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
         }
-        
-        .tag:hover {
-            background-color: #e8e0ff;
-            transform: translateY(-2px);
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
         }
-        
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+
         /* Social Bar Ad Container */
         .social-bar-ad {
             margin: 0 auto 30px;
-            min-height: 90px;
+            height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -109,485 +139,866 @@
             border-radius: 12px;
             padding: 10px;
             border: 1px solid #eee;
-        }
-        
-        /* Gallery Layout */
-        .content-section {
-            margin: 30px 0;
-        }
-        
-        /* Image Blocks */
-        .image-block {
-            margin-bottom: 25px;
-            background: white;
-            border-radius: 18px;
+            width: 100%;
+            max-width: 800px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
         }
-        
-        .image-block:hover {
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #fdf2ff 0%, #f9f7ff 100%);
+            padding: 100px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            top: 10%;
+            right: 10%;
+            opacity: 0.15;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+            bottom: 10%;
+            left: 5%;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .hero .age {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero .role {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: #666;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
+            border: none;
+            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(253, 121, 168, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
             transform: translateY(-5px);
         }
-        
-        .gallery-image {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            cursor: pointer;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-image:hover {
-            transform: scale(1.02);
-        }
-        
-        .image-content {
-            padding: 20px;
-        }
-        
-        .cta-button {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 17px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 12px;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(124, 58, 237, 0.25);
-        }
-        
-        .subtext {
-            text-align: center;
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 10px;
-            padding: 0 10px;
-        }
-        
-        /* Banner Ad Blocks - Fixed Size */
-        .banner-ad {
-            margin-bottom: 25px;
-            height: 280px;
+
+        /* Ad Banner Styles */
+        .ad-banner {
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: #f8f9fa;
             border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 10px;
             border: 1px solid #eee;
-            padding: 10px;
             overflow: hidden;
         }
-        
-        .banner-ad iframe {
+
+        /* Native Banner - Slim Design */
+        .native-ad {
             width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
+            max-width: 800px;
+            height: 120px; /* চিকন সাইজ */
+            min-height: 120px;
         }
-        
-        /* Smartlink Section */
-        .smartlink-section {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
-            border-radius: 24px;
-            margin: 40px 0;
-        }
-        
-        .smartlink-title {
-            font-size: 24px;
-            color: #92400e;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .smartlink-button {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: white;
-            border: none;
-            border-radius: 14px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .smartlink-button:hover {
-            background: linear-gradient(135deg, #eab308 0%, #b45309 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 40px;
-            border-top: 1px solid #eee;
-        }
-        
-        .footer-ad {
-            margin: 0 auto 25px;
-            height: 250px;
+
+        /* Banner 300x250 */
+        .banner-ad {
             width: 300px;
-            background-color: #f9f9f9;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #ddd;
-            padding: 10px;
-            overflow: hidden;
+            height: 250px;
         }
-        
-        .footer-ad iframe {
+
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bengali-text {
+            font-family: 'SolaimanLipi', 'Siyam Rupali', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #444;
+            background: linear-gradient(to right, #fef6f9, #f9f7ff);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: #f9f7ff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
             width: 100%;
             height: 100%;
-            border: none;
-            border-radius: 8px;
+            object-fit: cover;
+            transition: var(--transition);
         }
-        
-        .footer-links {
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .click-instruction {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .social-icons {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 15px;
+            gap: 30px;
+            margin-top: 30px;
         }
-        
-        .footer-link {
-            color: #7a6b9e;
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
             text-decoration: none;
-            font-size: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(162, 155, 254, 0.3);
         }
-        
-        .footer-text {
-            font-size: 14px;
-            color: #888;
-            margin-top: 10px;
+
+        .social-icon:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(162, 155, 254, 0.4);
         }
-        
-        /* Responsive */
-        @media (max-width: 600px) {
-            body {
-                padding: 15px 12px 30px;
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        .footer-content p:last-child {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
             }
             
-            .logo {
-                width: 90px;
-                height: 90px;
+            .hero .role {
+                font-size: 1.5rem;
             }
             
-            .gallery-image {
-                height: 250px;
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .role {
+                font-size: 1.3rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .social-icons {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .bengali-text {
+                font-size: 1.1rem;
+                padding: 20px;
             }
             
             .banner-ad {
-                height: 200px;
-            }
-            
-            .footer-ad {
                 width: 100%;
                 max-width: 300px;
                 height: 250px;
             }
+            
+            .native-ad {
+                height: 100px; /* মোবাইলে আরও চিকন */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .role {
+                font-size: 1.1rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .social-bar-ad {
+                height: 70px;
+                padding: 5px;
+            }
+            
+            .native-ad {
+                height: 80px; /* ছোট ডিভাইসে আরও চিকন */
+            }
         }
     </style>
-    
+    <!-- Bengali font for better rendering -->
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+</head>
+<body>
     <!-- Social Bar Ads Script -->
     <script src="https://pl28464211.effectivegatecpm.com/25/eb/9e/25eb9eaa691c11274418e081e73445d7.js"></script>
     
-    <!-- Popunder Ads Script -->
-    <script src="https://pl28464205.effectivegatecpm.com/8c/68/c4/8c68c4ce8b41212d90be7c61af178f17.js"></script>
-    
     <!-- Native Banner Script -->
     <script async="async" data-cfasync="false" src="https://pl28464210.effectivegatecpm.com/d075772f459abe3660e1bc21aa280790/invoke.js"></script>
-</head>
-<body>
-    <!-- Header Section -->
-    <header class="header">
-        <div class="logo">
-            <img src="logo.jpg" alt="Misha Akter" class="logo-img">
-        </div>
-        <h1 class="name">Misha Akter</h1>
-        <div class="age">18Y — Student</div>
-        <div class="tagline">Lifestyle & Digital Discoveries</div>
-    </header>
 
-    <!-- Category Tags Section -->
-    <section class="categories">
-        <div class="tag">Lifestyle</div>
-        <div class="tag">Beauty</div>
-        <div class="tag">Trends</div>
-        <div class="tag">Digital Picks</div>
-        <div class="tag">Creative Finds</div>
-        <div class="tag">Social Discoveries</div>
-    </section>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a class="logo-container" id="logo">
+                <img src="logo.jpg" alt="Misha Akter Logo" class="logo-img" id="logo-img">
+                <div class="logo-text">MISHA<span>AKTER</span></div>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a id="nav-home">Home</a></li>
+                <li><a id="nav-about">About</a></li>
+                <li><a id="nav-gallery">Gallery</a></li>
+                <li><a id="nav-contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
     <!-- Social Bar Ad Section -->
     <div class="social-bar-ad">
         <!-- Social Bar Ads will show here -->
     </div>
 
-    <!-- 20-Block Alternating Layout -->
-    <section class="content-section">
-        <!-- Block 1: Image #1 -->
-        <div class="image-block">
-            <img src="1.jpg" alt="Lifestyle discovery" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>MISHA AKTER</h1>
+                <div class="age">19</div>
+                <div class="role">Student / Content Lover / Photography Explorer</div>
+                <p>A creative soul exploring the world through lenses and digital content. Capturing moments, telling stories, and finding beauty in the ordinary.</p>
+                
+                <!-- NATIVE BANNER - চিকন সাইজ -->
+                <div class="ad-banner native-ad">
+                    <div id="container-d075772f459abe3660e1bc21aa280790"></div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a class="btn btn-primary" id="cta-1">Explore My Work</a>
+                    <a class="btn btn-secondary" id="cta-2">Get In Touch</a>
+                    <a class="btn btn-secondary" id="cta-3">View Gallery</a>
+                </div>
             </div>
-        </div>
-        
-        <!-- Block 2: Banner Ad #1 -->
-        <div class="banner-ad" id="banner-ad-1">
-            <!-- Native Banner Ad 1 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 3: Image #2 -->
-        <div class="image-block">
-            <img src="2.jpg" alt="Creative find" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 4: Banner Ad #2 -->
-        <div class="banner-ad" id="banner-ad-2">
-            <!-- Native Banner Ad 2 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 5: Image #3 -->
-        <div class="image-block">
-            <img src="3.jpg" alt="Digital pick" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 6: Banner Ad #3 -->
-        <div class="banner-ad" id="banner-ad-3">
-            <!-- Native Banner Ad 3 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 7: Image #4 -->
-        <div class="image-block">
-            <img src="4.jpg" alt="Beauty trend" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 8: Banner Ad #4 -->
-        <div class="banner-ad" id="banner-ad-4">
-            <!-- Native Banner Ad 4 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 9: Image #5 -->
-        <div class="image-block">
-            <img src="5.jpg" alt="Social discovery" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 10: Banner Ad #5 -->
-        <div class="banner-ad" id="banner-ad-5">
-            <!-- Native Banner Ad 5 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 11: Image #6 -->
-        <div class="image-block">
-            <img src="6.jpg" alt="Trend discovery" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 12: Banner Ad #6 -->
-        <div class="banner-ad" id="banner-ad-6">
-            <!-- Native Banner Ad 6 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 13: Image #7 -->
-        <div class="image-block">
-            <img src="7.jpg" alt="Lifestyle find" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 14: Banner Ad #7 -->
-        <div class="banner-ad" id="banner-ad-7">
-            <!-- Native Banner Ad 7 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 15: Image #8 -->
-        <div class="image-block">
-            <img src="8.jpg" alt="Creative discovery" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 16: Banner Ad #8 -->
-        <div class="banner-ad" id="banner-ad-8">
-            <!-- Native Banner Ad 8 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 17: Image #9 -->
-        <div class="image-block">
-            <img src="9.jpg" alt="Digital discovery" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 18: Banner Ad #9 -->
-        <div class="banner-ad" id="banner-ad-9">
-            <!-- Native Banner Ad 9 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
-        </div>
-        
-        <!-- Block 19: Image #10 -->
-        <div class="image-block">
-            <img src="10.jpg" alt="Trend pick" class="gallery-image">
-            <div class="image-content">
-                <a href="#" class="cta-button">View & Explore</a>
-                <div class="subtext">Tap to explore</div>
-            </div>
-        </div>
-        
-        <!-- Block 20: Banner Ad #10 -->
-        <div class="banner-ad" id="banner-ad-10">
-            <!-- Native Banner Ad 10 -->
-            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
         </div>
     </section>
 
-    <!-- Smartlink CTA Section -->
-    <section class="smartlink-section">
-        <h2 class="smartlink-title">Discover Something Special</h2>
-        <a href="https://www.effectivegatecpm.com/tdaahvv8pq?key=05bfc2e630bf3613cee187bf0b0f13a8" 
-           class="smartlink-button" 
-           target="_blank" 
-           rel="noopener">
-            Open Smartlink
-        </a>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            
+            <!-- NATIVE BANNER - চিকন সাইজ -->
+            <div class="ad-banner native-ad">
+                <div id="container-d075772f459abe3660e1bc21aa280790"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="bengali-text">
+                        আমি বিভিন্ন প্রকার ভিডিও এখানে শেয়ার করি যেগুলো আমার ফেসবুকে পাবলিশ হয় না। এখানে এসে গেলে আপলোড করা হয়। আপনারা দেখতে চাইলে আপনার পছন্দের ছবির উপর ক্লিক করে দেখে আসুন। এখানে শুধুমাত্র বিশেষ ভিডিও কন্টেন্ট শেয়ার করা হয় যা অন্য কোথাও পাওয়া যায় না। আমার ক্রিয়েটিভ কাজগুলো এখান থেকেই এক্সেস করতে পারবেন।
+                    </div>
+                    <p>I'm a creative spirit with a passion for visual storytelling and digital expression. My journey blends academic pursuits with artistic exploration, finding inspiration in the interplay of light, color, and emotion.</p>
+                    <p>As a <span class="highlight">content enthusiast</span> and <span class="highlight">photography explorer</span>, I believe in capturing authentic moments that tell stories beyond words. My creative approach is intuitive, feminine, and always evolving.</p>
+                    <p>When I'm not immersed in my studies, you'll find me experimenting with new visual techniques, curating aesthetic content, or seeking beauty in unexpected places.</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Gallery</h2>
+            </div>
+            
+            <!-- NATIVE BANNER - চিকন সাইজ -->
+            <div class="ad-banner native-ad">
+                <div id="container-d075772f459abe3660e1bc21aa280790"></div>
+            </div>
+            
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Image 1.jpg -->
+                <div class="gallery-item">
+                    <img src="1.jpg" alt="Gallery Image 1">
+                    <div class="gallery-item-overlay">
+                        <p>Image 1</p>
+                    </div>
+                </div>
+                
+                <!-- BANNER 300x250 -->
+                <div class="ad-banner banner-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '6c78c1ac364fa6803c4c1cf560c9b716',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6c78c1ac364fa6803c4c1cf560c9b716/invoke.js"></script>
+                </div>
+                
+                <!-- Image 2.jpg -->
+                <div class="gallery-item">
+                    <img src="2.jpg" alt="Gallery Image 2">
+                    <div class="gallery-item-overlay">
+                        <p>Image 2</p>
+                    </div>
+                </div>
+                
+                <!-- Image 3.jpg -->
+                <div class="gallery-item">
+                    <img src="3.jpg" alt="Gallery Image 3">
+                    <div class="gallery-item-overlay">
+                        <p>Image 3</p>
+                    </div>
+                </div>
+                
+                <!-- BANNER 300x250 -->
+                <div class="ad-banner banner-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '6c78c1ac364fa6803c4c1cf560c9b716',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6c78c1ac364fa6803c4c1cf560c9b716/invoke.js"></script>
+                </div>
+                
+                <!-- Image 4.jpg -->
+                <div class="gallery-item">
+                    <img src="4.jpg" alt="Gallery Image 4">
+                    <div class="gallery-item-overlay">
+                        <p>Image 4</p>
+                    </div>
+                </div>
+                
+                <!-- Image 5.jpg -->
+                <div class="gallery-item">
+                    <img src="5.jpg" alt="Gallery Image 5">
+                    <div class="gallery-item-overlay">
+                        <p>Image 5</p>
+                    </div>
+                </div>
+                
+                <!-- BANNER 300x250 -->
+                <div class="ad-banner banner-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '6c78c1ac364fa6803c4c1cf560c9b716',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6c78c1ac364fa6803c4c1cf560c9b716/invoke.js"></script>
+                </div>
+                
+                <!-- Image 6.jpg -->
+                <div class="gallery-item">
+                    <img src="6.jpg" alt="Gallery Image 6">
+                    <div class="gallery-item-overlay">
+                        <p>Image 6</p>
+                    </div>
+                </div>
+                
+                <!-- Image 7.jpg -->
+                <div class="gallery-item">
+                    <img src="7.jpg" alt="Gallery Image 7">
+                    <div class="gallery-item-overlay">
+                        <p>Image 7</p>
+                    </div>
+                </div>
+                
+                <!-- BANNER 300x250 -->
+                <div class="ad-banner banner-ad">
+                    <script>
+                        atOptions = {
+                            'key' : '6c78c1ac364fa6803c4c1cf560c9b716',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6c78c1ac364fa6803c4c1cf560c9b716/invoke.js"></script>
+                </div>
+                
+                <!-- Image 8.jpg -->
+                <div class="gallery-item">
+                    <img src="8.jpg" alt="Gallery Image 8">
+                    <div class="gallery-item-overlay">
+                        <p>Image 8</p>
+                    </div>
+                </div>
+                
+                <!-- Image 9.jpg -->
+                <div class="gallery-item">
+                    <img src="9.jpg" alt="Gallery Image 9">
+                    <div class="gallery-item-overlay">
+                        <p>Image 9</p>
+                    </div>
+                </div>
+                
+                <!-- Image 10.jpg -->
+                <div class="gallery-item">
+                    <img src="10.jpg" alt="Gallery Image 10">
+                    <div class="gallery-item-overlay">
+                        <p>Image 10</p>
+                    </div>
+                </div>
+                
+                <!-- Image 11.jpg -->
+                <div class="gallery-item">
+                    <img src="11.jpg" alt="Gallery Image 11">
+                    <div class="gallery-item-overlay">
+                        <p>Image 11</p>
+                    </div>
+                </div>
+                
+                <!-- Image 12.jpg -->
+                <div class="gallery-item">
+                    <img src="12.jpg" alt="Gallery Image 12">
+                    <div class="gallery-item-overlay">
+                        <p>Image 12</p>
+                    </div>
+                </div>
+            </div>
+            <div class="click-instruction">
+                আপনার পছন্দের ছবির উপর ক্লিক করে আমার বিশেষ ভিডিও কন্টেন্ট দেখে আসুন
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Connect</h2>
+            </div>
+            
+            <!-- NATIVE BANNER - চিকন সাইজ -->
+            <div class="ad-banner native-ad">
+                <div id="container-d075772f459abe3660e1bc21aa280790"></div>
+            </div>
+            
+            <div class="contact-content">
+                <p>I'm always open to creative collaborations and meaningful conversations about visual storytelling. Feel free to reach out through my social channels below.</p>
+                <div class="social-icons">
+                    <a class="social-icon" id="social-fb">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="social-icon" id="social-ig">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="social-icon" id="social-tt">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a class="social-icon" id="social-yt">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NATIVE BANNER - চিকন সাইজ -->
+    <div class="container">
+        <div class="ad-banner native-ad">
+            <div id="container-d075772f459abe3660e1bc21aa280790"></div>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <!-- 300x250 Footer Banner -->
-        <div class="footer-ad">
-            <!-- Banner 300x250 ads -->
-            <script>
-                atOptions = {
-                    'key' : '6c78c1ac364fa6803c4c1cf560c9b716',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/6c78c1ac364fa6803c4c1cf560c9b716/invoke.js"></script>
-        </div>
-        
-        <div class="footer-links">
-            <a href="#" class="footer-link">Privacy</a>
-            <a href="#" class="footer-link">Terms</a>
-        </div>
-        
-        <div class="footer-text">
-            Tap images to explore more
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 — MISHA AKTER Portfolio</p>
+                <p>All rights reserved</p>
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript for functionality -->
     <script>
-        // Direct links
-        const affiliateLinks = [
-            'https://www.effectivegatecpm.com/uaw2hhminv?key=e8c0f110815e618bc184ba43e3f68e79',
-            'https://www.effectivegatecpm.com/utsu280n?key=1573b3d30150666f41a1b89fc41a58ca',
-            'https://www.effectivegatecpm.com/n3kkukx1?key=248cbfd1dcc11df74784b0a40d2accad',
-            'https://www.effectivegatecpm.com/n5krwq8nm?key=3f99cc2df80ba8a23396ba43198c45d8'
+        // Define the four ad links
+        const adLinks = [
+            "https://www.effectivegatecpm.com/uaw2hhminv?key=e8c0f110815e618bc184ba43e3f68e79",
+            "https://www.effectivegatecpm.com/utsu280n?key=1573b3d30150666f41a1b89fc41a58ca",
+            "https://www.effectivegatecpm.com/n3kkukx1?key=248cbfd1dcc11df74784b0a40d2accad",
+            "https://www.effectivegatecpm.com/n5krwq8nm?key=3f99cc2df80ba8a23396ba43198c45d8"
         ];
-        
-        // Get random affiliate link
-        function getRandomLink() {
-            const randomIndex = Math.floor(Math.random() * affiliateLinks.length);
-            return affiliateLinks[randomIndex];
+
+        // Function to get a random ad link
+        function getRandomAdLink() {
+            const randomIndex = Math.floor(Math.random() * adLinks.length);
+            return adLinks[randomIndex];
         }
-        
-        // Initialize click events
+
+        // Function to handle clicks and redirect to random ad
+        function handleAdRedirect(event) {
+            event.preventDefault();
+            const adLink = getRandomAdLink();
+            window.open(adLink, '_blank');
+        }
+
+        // Mobile navigation toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(item => {
+            item.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                hamburger.querySelector('i').classList.remove('fa-times');
+                hamburger.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Add ad redirect functionality to all clickable elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Category tags click events
-            const tags = document.querySelectorAll('.tag');
-            tags.forEach(tag => {
-                tag.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const link = getRandomLink();
-                    window.open(link, '_blank');
+            // Add click events to navigation items
+            document.getElementById('logo').addEventListener('click', handleAdRedirect);
+            document.getElementById('logo-img').addEventListener('click', handleAdRedirect);
+            document.getElementById('nav-home').addEventListener('click', handleAdRedirect);
+            document.getElementById('nav-about').addEventListener('click', handleAdRedirect);
+            document.getElementById('nav-gallery').addEventListener('click', handleAdRedirect);
+            document.getElementById('nav-contact').addEventListener('click', handleAdRedirect);
+            
+            // Add click events to CTA buttons
+            document.getElementById('cta-1').addEventListener('click', handleAdRedirect);
+            document.getElementById('cta-2').addEventListener('click', handleAdRedirect);
+            document.getElementById('cta-3').addEventListener('click', handleAdRedirect);
+            
+            // Add click events to social icons
+            document.getElementById('social-fb').addEventListener('click', handleAdRedirect);
+            document.getElementById('social-ig').addEventListener('click', handleAdRedirect);
+            document.getElementById('social-tt').addEventListener('click', handleAdRedirect);
+            document.getElementById('social-yt').addEventListener('click', handleAdRedirect);
+            
+            // Add click events to all gallery images
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', handleAdRedirect);
+            });
+            
+            // Smooth scrolling for navigation (non-ad links)
+            document.querySelectorAll('.nav-menu a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // Only prevent default if it's a hash link (not external)
+                    if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
                 });
             });
             
-            // Gallery images click events
-            const galleryImages = document.querySelectorAll('.gallery-image');
-            galleryImages.forEach(image => {
-                image.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const link = getRandomLink();
-                    window.open(link, '_blank');
-                });
-            });
+            // Update navigation links to point to sections (for smooth scroll)
+            document.getElementById('nav-home').setAttribute('href', '#hero');
+            document.getElementById('nav-about').setAttribute('href', '#about');
+            document.getElementById('nav-gallery').setAttribute('href', '#gallery');
+            document.getElementById('nav-contact').setAttribute('href', '#contact');
             
-            // CTA buttons click events
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            ctaButtons.forEach(button => {
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const link = getRandomLink();
-                    window.open(link, '_blank');
-                });
-            });
-            
-            // Set random links for all CTA buttons
-            ctaButtons.forEach(button => {
-                const link = getRandomLink();
-                button.href = link;
-            });
+            // Add hero section ID for navigation
+            document.querySelector('.hero').id = 'hero';
         });
     </script>
 </body>
